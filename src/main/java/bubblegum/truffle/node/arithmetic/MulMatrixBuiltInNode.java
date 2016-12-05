@@ -29,7 +29,6 @@ public abstract class MulMatrixBuiltInNode extends BuiltinNode{
 		
 		System.out.println(CompilerDirectives.inCompiledCode() +" "+CompilerDirectives.inInterpreter()); 
 		for(int i=0; i< m; i++){
-			CompilerDirectives.injectBranchProbability(0.00001, i % 7000 == 0);
 			for(int j=0; j< n; j++)
 				for(int k=0; k< l; k++)
 					C.getData()[i][j]|=A.getData()[i][k]&B.getData()[k][j];
@@ -50,7 +49,6 @@ public abstract class MulMatrixBuiltInNode extends BuiltinNode{
 		
 		System.out.println(CompilerDirectives.inCompiledCode() +" "+CompilerDirectives.inInterpreter()); 
 		for(int i=0; i< m; i++){
-			CompilerDirectives.injectBranchProbability(0.00001, i % 7000 == 0);
 			for(int j=0; j< n; j++)
 				for(int k=0; k< l; k++)
 					C.getData()[i][j]+=A.getData()[i][k]*B.getData()[k][j];
